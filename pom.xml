@@ -77,6 +77,15 @@
 
     </properties>
 
+    <!-- Temporarily host coveralls SNAPSHOT with clover support locally  -->
+    <repositories>
+        <repository>
+            <id>project.local</id>
+            <name>project</name>
+            <url>file:${project.basedir}/repo</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -277,7 +286,6 @@
                 <configuration>
                     <excludes>
                         <exclude>**/*Test*</exclude>
-                        <exclude>**/*IT*</exclude>
                         <!-- leaving out lang as it mostly comes from other sources -->
                         <exclude>io/jsonwebtoken/lang/*</exclude>
                     </excludes>
@@ -289,7 +297,7 @@
                 <executions>
                     <execution>
                         <id>clover</id>
-                        <phase>verify</phase>
+                        <phase>test</phase>
                         <goals>
                             <goal>instrument</goal>
                             <goal>check</goal>
@@ -345,7 +353,8 @@
             <plugin>
                 <groupId>org.eluder.coveralls</groupId>
                 <artifactId>coveralls-maven-plugin</artifactId>
-                <version>4.3.0</version>
+                <!-- Temporarily host coveralls SNAPSHOT with clover support locally  -->
+                <version>4.4.0-SNAPSHOT</version>
             </plugin>
         </plugins>
     </build>
