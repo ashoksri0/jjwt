@@ -82,7 +82,7 @@
         <repository>
             <id>project.local</id>
             <name>project</name>
-            <url>file:${project.basedir}/repo</url>
+            <url>file://${basedir}/repo</url>
         </repository>
     </repositories>
 
@@ -161,6 +161,19 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Temporarily host coveralls SNAPSHOT with clover support locally  -->
+        <dependency>
+            <groupId>org.eluder.coveralls</groupId>
+            <artifactId>coveralls-maven-plugin</artifactId>
+            <version>4.4.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jgit</groupId>
+            <artifactId>org.eclipse.jgit</artifactId>
+            <version>4.5.0.201609210915-r</version>
+        </dependency>
+        <!-- Temporarily host coveralls SNAPSHOT with clover support locally  -->
 
     </dependencies>
 
