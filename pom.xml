@@ -168,11 +168,6 @@
             <artifactId>coveralls-maven-plugin</artifactId>
             <version>4.4.0-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>org.eclipse.jgit</groupId>
-            <artifactId>org.eclipse.jgit</artifactId>
-            <version>4.5.0.201609210915-r</version>
-        </dependency>
         <!-- Temporarily host coveralls SNAPSHOT with clover support locally  -->
 
     </dependencies>
@@ -363,12 +358,25 @@
                     </instructions>
                 </configuration>
             </plugin>
+            <!-- Temporarily host coveralls SNAPSHOT with clover support locally  -->
             <plugin>
                 <groupId>org.eluder.coveralls</groupId>
                 <artifactId>coveralls-maven-plugin</artifactId>
-                <!-- Temporarily host coveralls SNAPSHOT with clover support locally  -->
                 <version>4.4.0-SNAPSHOT</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.eclipse.jgit</groupId>
+                        <artifactId>org.eclipse.jgit</artifactId>
+                        <version>4.5.0.201609210915-r</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.codehaus.plexus</groupId>
+                        <artifactId>plexus-utils</artifactId>
+                        <version>2.0.7</version>
+                    </dependency>
+                </dependencies>
             </plugin>
+            <!-- Temporarily host coveralls SNAPSHOT with clover support locally  -->
         </plugins>
     </build>
     <profiles>
