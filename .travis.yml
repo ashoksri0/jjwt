@@ -8,6 +8,7 @@ jdk:
   - oraclejdk8
 
 before_install:
+  - ./scripts/coveralls-maven-snapshot-setup.sh
   - export BUILD_COVERAGE="$([ $TRAVIS_JDK_VERSION == 'oraclejdk8' ] && echo 'true')"
 
 install: echo "No need to run mvn install -DskipTests then mvn install.  Running mvn install."
