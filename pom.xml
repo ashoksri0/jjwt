@@ -77,15 +77,6 @@
 
     </properties>
 
-    <!-- Temporarily host coveralls SNAPSHOT with clover support locally  -->
-    <repositories>
-        <repository>
-            <id>project.local</id>
-            <name>project</name>
-            <url>file://${basedir}/repo</url>
-        </repository>
-    </repositories>
-
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -161,12 +152,6 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.eluder.coveralls</groupId>
-            <artifactId>coveralls-maven-plugin</artifactId>
-            <version>4.4.0-SNAPSHOT</version>
-        </dependency>
-
     </dependencies>
 
     <build>
